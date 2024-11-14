@@ -1,0 +1,84 @@
+:root {
+  --c-darkest: #212529;
+  --c-dark: #173c31;
+  --c-mid: #589e95;
+  --c-light: #b6eff1;
+  --c-f-color: #fff;
+  --c-link-dark: #341156;
+  --c-link-mid: #791cd5;
+  --c-link-light: #a966ed;
+  --c-inner: 182, 239, 241;
+  --c-outer: 23, 60, 49;
+  --c-body: #727272;
+  --c-brand: #F7A632;
+  --c-brand-shadow: #ffe5c1;
+  --font-base: "ClashDisplay", sans-serif;
+  --transition: all 0.5s ease;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: var(--font-base);
+}
+
+.error-holder {
+  position: fixed;
+  height: 100px;  
+  width: 80%;
+  max-width: 400px;
+  background-color: var(--c-light);
+  position: absolute;
+  border-radius: 25px;
+  transform: translate(-50%, 500%);
+  z-index: 10000;
+  left: 50%;
+  border: 2px solid var(--c-brand);
+  opacity: 1;
+  transition: opacity 1s ease;
+  padding: 15px;
+  text-align: center;
+  opacity: 0.8;
+}
+
+/* Hide error message with fade-out */
+.error-holder.hide {
+  opacity: 0;
+}
+
+
+.error-hold {
+  height: 100%;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding-inline: 25px;
+
+}
+
+.error-msg {
+  font: bold;
+  color: var(--c-brand);
+}
+
+@media (max-width: 768px) {
+  .error-holder {
+    width: 90%;
+    max-width: 300px;
+    font-size: 0.9em;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .error-holder {
+    width: 95%;
+    max-width: 280px;
+    font-size: 0.8em;
+    padding: 8px;
+  }
+}

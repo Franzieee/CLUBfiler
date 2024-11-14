@@ -1,0 +1,43 @@
+College Table:
++--------------+--------------+------+-----+---------+-------+
+| Field        | Type         | Null | Key | Default | Extra |
++--------------+--------------+------+-----+---------+-------+
+| College_Name | varchar(255) | YES  |     | NULL    |       |
++--------------+--------------+------+-----+---------+-------+
+
+
+Student_ids Table:
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| student_ids | varchar(255) | NO   | PRI | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+
+
+// hard coded values
+Superadmins Table:
++------------+--------------------------------------------------------------+---------------+
+| student_id | password                                                     | username      |
++------------+--------------------------------------------------------------+---------------+
+| 22-10205   | $2y$10$XjH3oZPsy7BwlXIczpif0.VEr1nnVi9m3laxNs1xo9o2Yst87V1/m | Mark Angelo   |
+| 22-10210   | $2y$10$XjH3oZPsy7BwlXIczpif0.VEr1nnVi9m3laxNs1xo9o2Yst87V1/m | Aaron Joseph  |
+| 22-10216   | $2y$10$XjH3oZPsy7BwlXIczpif0.VEr1nnVi9m3laxNs1xo9o2Yst87V1/m | Harold        |
+| 22-10227   | $2y$10$XjH3oZPsy7BwlXIczpif0.VEr1nnVi9m3laxNs1xo9o2Yst87V1/m | Neil          |
+| 22-10246   | $2y$10$XjH3oZPsy7BwlXIczpif0.VEr1nnVi9m3laxNs1xo9o2Yst87V1/m | Frances Karel |
+| 22-10337   | $2y$10$XjH3oZPsy7BwlXIczpif0.VEr1nnVi9m3laxNs1xo9o2Yst87V1/m | Karl Dominic  |
++------------+--------------------------------------------------------------+---------------+
+// for the password, use default hash in web for "clubfilersuperadmins6"
+
+
+User Table:
++------------+--------------+------+-----+---------+-------+
+| Field      | Type         | Null | Key | Default | Extra |
++------------+--------------+------+-----+---------+-------+
+| student_id | varchar(255) | NO   | PRI | NULL    |       |
+| username   | varchar(255) | NO   | UNI | NULL    |       |
+| password   | varchar(255) | NO   |     | NULL    |       |
+| email      | varchar(255) | NO   | UNI | NULL    |       |
+| college    | varchar(255) | NO   |     | NULL    |       |
+| program    | varchar(255) | NO   |     | NULL    |       |
+| section    | varchar(255) | NO   |     | NULL    |       |
++------------+--------------+------+-----+---------+-------+

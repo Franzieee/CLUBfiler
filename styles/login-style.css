@@ -1,0 +1,523 @@
+@import url("../fonts/clash-display.css");
+
+:root {
+  --c-darkest: #212529;
+  --c-dark: #173c31;
+  --c-mid: #589e95;
+  --c-light: #b6eff1;
+  --c-f-color: #fff;
+  --c-link-dark: #341156;
+  --c-link-mid: #791cd5;
+  --c-link-light: #a966ed;
+  --c-inner: 182, 239, 241;
+  --c-outer: 23, 60, 49;
+  --c-body: #727272;
+  --c-brand: #F7A632;
+  --c-brand-shadow: #ffe5c1;
+  --font-base: "ClashDisplay", sans-serif;
+  --transition: all 0.5s ease;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: var(--font-base);
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-image: radial-gradient(circle,
+      rgba(var(--c-inner)),
+      rgba(var(--c-outer)));
+}
+
+.content {
+  width: 100%;
+  text-align: center;
+}
+
+.box-container {
+  height: 475px;
+  width: 80%;
+  max-width: 875px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  overflow: hidden;
+  border-radius: 25px;
+  transform: translate(-50%, -50%);
+  box-shadow: none;
+  transition: box-shadow 0.5s ease;
+}
+
+.box {
+  height: 100%;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding-inline: 25px;
+}
+
+.left,
+.right {
+  width: 30%;
+  transition: transform 0.7s ease, border-radius 0.7s ease, border 0.7s ease;
+}
+
+.right {
+  background-color: var(--c-mid);
+  color: var(--c-f-color);
+  border: 2px solid var(--c-brand);
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border-left: none;
+}
+
+.right form {
+  width: 100%;
+  max-width: 300px;
+  font-size: 20px;
+  padding: 5px 10px;
+  margin-top: 0px;
+}
+
+.right .inner form {
+  padding: 20px;
+}
+
+header {
+  color: var(--c-brand);
+  font-size: 40px;
+  font: bold;
+  text-shadow:
+    -1px -1px 0 var(--c-brand-shadow),
+    /* Top-left */
+    1px -1px 0 var(--c-brand-shadow),
+    /* Top-right */
+    -1px 1px 0 var(--c-brand-shadow),
+    /* Bottom-left */
+    1px 1px 0 var(--c-brand-shadow);
+}
+
+.inner header {
+  margin: 20px;
+  margin-bottom: 0px;
+}
+
+.right label,
+.right input,
+.right button {
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+input::placeholder {
+  font-size: 13px;
+}
+
+.right .inner {
+  width: 100%;
+  max-width: 300px;
+  font-size: 20px;
+  box-sizing: border-box;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.right label {
+  width: 100%;
+  display: block;
+  margin-bottom: 5px;
+  text-align: left;
+  font-size: 16px;
+}
+
+.right input {
+  height: 35px;
+  border-radius: 25px;
+  border: 2px solid var(--c-light);
+  margin-top: 5px;
+  margin-bottom: 15px;
+  padding-left: 10px;
+  font-size: 14px;
+}
+
+.right button {
+  height: 35px;
+  border-radius: 25px;
+  background-color: var(--c-dark);
+  border: 2px solid var(--c-light);
+  font-size: 13px;
+  color: var(--c-f-color);
+  margin-top: 25px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  padding: 5px 10px;
+  transition: all 0.5s;
+}
+
+.right button:hover {
+  opacity: 1;
+  box-shadow: 0 0 8px 2px var(--c-light);
+  background: var(--c-mid);
+}
+
+.links {
+  font-size: 15px;
+}
+
+.links a {
+  transition: color 0.3s ease;
+  text-decoration: underline;
+  color: var(--c-link-dark);
+}
+
+.links a:hover {
+  color: var(--c-link-mid);
+  text-shadow: 0 0 5px var(--c-link-light), 0 0 3px var(--c-link-light),
+    0 0 3px var(--c-link-light);
+  text-decoration: underline;
+  transition: all 0.5s;
+}
+
+.left {
+  background-color: var(--c-dark);
+  color: var(--c-f-color);
+  border: 2px solid var(--c-brand);
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  border-right: none;
+}
+
+.left h1 {
+  font-size: 35px;
+  margin-top: 130px;
+  transform: translate(0%, -30%);
+}
+
+.left p {
+  font-size: 18px;
+}
+
+.left h3 {
+  font-size: 15px;
+  margin-top: 100px;
+  text-align: left;
+}
+
+.inner i {
+  font-size: 20px;
+  margin: 30px;
+}
+
+.box .inner {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeInAnimation 0.3s forwards;
+  animation-delay: 0.3s;
+  /* Add a small delay */
+}
+
+.fade-out {
+  opacity: 1;
+  animation: fadeOutAnimation 0.7s forwards;
+}
+
+.no-shadow {
+  box-shadow: 0 0 0px 0px rgba(0, 0, 0, 0);
+}
+
+.yes-shadow {
+  box-shadow: 0 0 8px 2px var(--c-darkest);
+}
+
+.left-after {
+  transform: translate(100%, 0%);
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-left: none;
+  border-right: 2px solid #b6eff1;
+}
+
+.right-after {
+  transform: translate(-100%, 0%);
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  border-left: 2px solid #b6eff1;
+  border-right: none;
+}
+
+@keyframes fadeInAnimation {
+  to {
+      opacity: 1;
+  }
+}
+
+@keyframes fadeOutAnimation {
+  to {
+      opacity: 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .left h1 {
+    font-size: 34px;
+  }
+
+  .left p {
+    font-size: 19px;
+    transform: translateY(-80%);
+  }
+
+  .left h3 {
+    font-size: 18px;
+    margin-bottom: 0px;
+  }
+
+  .inner i {
+    font-size: 20px;
+    margin-top: 20px;
+    margin: 20px;
+  }
+}
+
+@media (max-width: 846px) {
+  .links {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .left h1 {
+    font-size: 24px;
+  }
+
+  .left p {
+    font-size: 17px;
+    transform: translateY(-50%);
+  }
+
+  .left h3 {
+    font-size: 15px;
+  }
+
+  .inner i {
+    font-size: 18px;
+    margin: 20px;
+  }
+
+  .left-after {
+    transform: translate(100%, 0%) !important;
+  }
+
+  .right-after {
+    transform: translate(-100%, 0%) !important;
+  }
+}
+
+@media (max-width: 426px) {
+  .box-container {
+    height: 600px;
+    flex-direction: column;
+    width: 70%;
+  }
+
+  .left,
+  .right {
+    width: 100%;
+    height: 50%;
+    border: 2px solid var(--c-light);
+    overflow: hidden;
+  }
+
+  .left {
+    order: 2;
+    border-radius: 0px;
+    border-top: none;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+  }
+
+  .right {
+    order: 1;
+    border-radius: 0px;
+    border-bottom: none;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+  }
+
+  .right form {
+    width: 100%;
+    max-width: 300px;
+    padding: 5px 10px;
+    margin-top: -20px;
+  }
+
+  .right .inner form {
+    padding: 10px;
+  }
+
+  header {
+    font-size: 30px;
+    margin-bottom: 15px;
+  }
+
+  .right label,
+  .right input,
+  .right button {
+    margin-bottom: 5px;
+  }
+
+  input::placeholder {
+    font-size: 10px;
+  }
+
+  .right label {
+    width: 100%;
+    display: block;
+    margin-bottom: 0px;
+    text-align: left;
+    font-size: 13px;
+  }
+
+  .right input {
+    height: 25px;
+    border-radius: 25px;
+    border: 2px solid var(--c-light);
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    font-size: 12px;
+  }
+
+  .right button {
+    height: 25px;
+    background-color: var(--c-dark);
+    border: 2px solid var(--c-light);
+    color: var(--c-f-color);
+    margin-top: 20px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: all 0.5s;
+  }
+
+  .right button:hover {
+    opacity: 1;
+    box-shadow: 0 0 8px 2px var(--c-light);
+    background: var(--c-mid);
+  }
+
+  .right .btn {
+    font-size: 14px;
+    padding-top: 0px;
+  }
+
+  .links {
+    font-size: 12px;
+  }
+
+  .left h1,
+  .left p,
+  .left h3,
+  .inner i {
+    margin: 0px;
+  }
+
+  .left h1 {
+    font-size: 23px;
+    transform: translateY(-50%);
+  }
+
+  .left p {
+    font-size: 14px;
+    transform: translateY(-90%);
+  }
+
+  .left h3 {
+    font-size: 15px;
+    text-align: left;
+    transform: translateY(220%);
+  }
+
+  .inner i {
+    font-size: 20px;
+    transform: translateY(275%);
+    margin: 18px;
+  }
+
+  .left-after,
+  .right-after {
+    transform: none;
+    transition: none;
+  }
+}
+
+@media (max-width: 376px) {
+  .left h1 {
+    font-size: 18px;
+  }
+
+  .inner i {
+    font-size: 15px;
+    margin: 17px;
+  }
+
+  .links {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 321px) {
+  .right .inner form {
+    margin-top: 8px;
+  }
+
+  .right label {
+    font-size: 13px;
+  }
+
+  .right button {
+    margin-top: 13px;
+  }
+
+  .right .btn {
+    padding-top: 5px;
+    font-size: 10px;
+  }
+
+  .links {
+    font-size: 9px;
+  }
+
+  .left h1 {
+    font-size: 16px;
+  }
+
+  .left p {
+    font-size: 13px;
+  }
+
+  .left h3 {
+    font-size: 12px;
+  }
+
+  .inner i {
+    margin: 10px;
+  }
+}

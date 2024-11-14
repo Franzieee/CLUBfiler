@@ -1,0 +1,35 @@
+Start up:
+
+git init
+git add .
+git status
+git commit -m "message"
+git branch -M "name"
+git remote add origin https://github.com/Franzieee/CLUB.git
+git push -u origin master
+
+Existing:
+
+git add . [or] git rm "file name" [or] git rm -r "folder name"
+git commit -m "message"
+git push origin master
+
+New branch:
+
+git branch "branch name"
+git checkout "branch name"
+
+[or]
+
+both in one command =
+git checkout -b "branch name"
+
+git add .
+git commit -m "message"
+git push origin "branch name"
+
+[merge]
+
+git checkout master
+git merge feature
+git push origin master
