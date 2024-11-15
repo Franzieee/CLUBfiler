@@ -13,7 +13,7 @@
     --c-outer: 23, 60, 49;
     --c-body: #727272;
     --c-brand: #F7A632;
-    --c-brand-shadow:  #ffe5c1; 
+    --c-brand-shadow: #ffe5c1;
     --font-base: "ClashDisplay", sans-serif;
     --transition: all 0.5s ease;
 }
@@ -36,21 +36,24 @@ body {
     text-align: center;
 }
 
-.navbar{
+.navbar {
     background-color: var(--c-dark);
     display: flex;
     align-items: center;
     padding: 10px 20px;
 }
 
-.navbar-brand{
+.navbar-brand {
     font-weight: bold;
     color: var(--c-brand) !important;
-    text-shadow: 
-    -1px -1px 0 var(--c-brand-shadow), /* Top-left */
-     1px -1px 0 var(--c-brand-shadow), /* Top-right */
-    -1px  1px 0 var(--c-brand-shadow), /* Bottom-left */
-     1px  1px 0 var(--c-brand-shadow);
+    text-shadow:
+        -1px -1px 0 var(--c-brand-shadow),
+        /* Top-left */
+        1px -1px 0 var(--c-brand-shadow),
+        /* Top-right */
+        -1px 1px 0 var(--c-brand-shadow),
+        /* Bottom-left */
+        1px 1px 0 var(--c-brand-shadow);
 }
 
 .navbar-links{
@@ -66,12 +69,16 @@ body {
 }
 
 .nav-link.active {
-    color: #fff !important;
+    color: var(--c-brand) !important;
     font-weight: bold;
 }
 
 .nav-link:hover{
     color: var(--c-f-color) !important;
+}
+
+.nav-item{
+    margin-bottom: 10px;
 }
 
 .btn-logout {
@@ -81,76 +88,56 @@ body {
     font-weight: bold;
     border-radius: 25px;
 }
- 
+
 .btn-logout:hover {
     cursor: pointer;
     transition: 0.3s ease;
-    background-color: var(--c-mid); /* Darker background on hover */
+    background-color: var(--c-mid);
+    /* Darker background on hover */
     transform: scale(1.1);
-    color: var(--c-light);
+    color: var(--c-f-color);
 }
 
 .btn-logout a {
-    text-decoration: none; /* Remove underline */
-    color: inherit; /* Inherit text color from the parent element */
+    text-decoration: none;
+    /* Remove underline */
+    color: inherit;
+    /* Inherit text color from the parent element */
 }
 
 #navbarNav.show {
     border-top: 1px solid white;
 }
 
-.welcome-section {
+.message {
     margin-top: 200px;
     text-align: center;
-    transform: translate(0%, 50%);
+    transform: translate(0%, 250%);
 }
- 
-.welcome-section h2 {
+
+.message h2 {
     color: var(--c-brand);
     font-weight: bold;
-    text-shadow: 
-    -1px -1px 0 var(--c-brand-shadow), /* Top-left */
-     1px -1px 0 var(--c-brand-shadow), /* Top-right */
-    -1px  3px 0 var(--c-brand-shadow), /* Bottom-left */
-     1px  2px 0 var(--c-brand-shadow);
+    text-shadow:
+        -1px -1px 0 var(--c-brand-shadow),
+        /* Top-left */
+        1px -1px 0 var(--c-brand-shadow),
+        /* Top-right */
+        -1px 3px 0 var(--c-brand-shadow),
+        /* Bottom-left */
+        1px 2px 0 var(--c-brand-shadow);
 }
-  
-  .plus-icon {
-    width: 150px;
-    max-width: 100%;
-    display: inline-block; /* Make the link behave like a block element */
-    padding: 5px 10px; /* Adjust padding as needed */
-    font-size: 15px; /* Font size for the icons */
-    color: var(--c-light); /* Text color */
-    background-color: var(--c-dark);
-    border: none;
-    border-radius: 25px; /* Remove underline */
-    text-align: center; /* Center the text */
-    margin: 0 10px;
-  }
-  
-  .plus-icon:hover {
-    cursor: pointer;
-    transition: 0.3s ease;
-    background-color: var(--c-mid); /* Darker background on hover */
-    transform: scale(1.1);
-  }
-
-  .icon-container a {
-    text-decoration: none; /* Remove underline */
-    color: inherit; /* Inherit text color from the parent element */
-}
-
-label{
+    
+label {
     font-size: 20px;
     color: var(--c-darkest);
 }
 
-span{
+span {
     font-size: 15px;
 }
 
-.span-box{
+.span-box {
     max-width: 200px;
     width: 90%;
     height: 100px;
@@ -160,6 +147,33 @@ span{
     background-color: var(--c-mid);
     border: 2px solid var(--c-light);
     margin-left: 20px;
+}
+
+.profile-link {
+    display: inline-flex; /* Centers the icon inside the circle */
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    width: 40px; /* Set width of the circle */
+    height: 40px;  /* Change #000 to your desired border color */
+    border-radius: 50%; /* Makes the border circular */
+    text-decoration: none; /* Removes underline from the link */
+    background-color: var(--c-mid); /* Optional: Add a background color */
+    color: inherit; /* Inherit the text/icon color */
+    border: 2px solid var(--c-light);
+}
+
+.profile-link:hover {
+    cursor: pointer;
+    transition: 0.3s ease;
+    background-color: var(--c-mid);
+    /* Darker background on hover */
+    transform: scale(1.1);
+    color: var(--c-light); /* Change icon color on hover */
+    border: 2px solid var(--c-f-color);
+}
+
+.lni {
+    font-size: 22px; /* Adjust the icon size */
 }
 
 @media (max-width: 992px) {
