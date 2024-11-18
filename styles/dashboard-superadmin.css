@@ -13,7 +13,7 @@
     --c-outer: 23, 60, 49;
     --c-body: #727272;
     --c-brand: #F7A632;
-    --c-brand-shadow:  #ffe5c1; 
+    --c-brand-shadow: #ffe5c1;
     --font-base: "ClashDisplay", sans-serif;
     --transition: all 0.5s ease;
 }
@@ -36,30 +36,33 @@ body {
     text-align: center;
 }
 
-.navbar{
+.navbar {
     background-color: var(--c-dark);
     display: flex;
     align-items: center;
     padding: 10px 20px;
 }
 
-.navbar-brand{
+.navbar-brand {
     font-weight: bold;
     color: var(--c-brand) !important;
-    text-shadow: 
-    -1px -1px 0 var(--c-brand-shadow), /* Top-left */
-     1px -1px 0 var(--c-brand-shadow), /* Top-right */
-    -1px  1px 0 var(--c-brand-shadow), /* Bottom-left */
-     1px  1px 0 var(--c-brand-shadow);
+    text-shadow:
+        -1px -1px 0 var(--c-brand-shadow),
+        /* Top-left */
+        1px -1px 0 var(--c-brand-shadow),
+        /* Top-right */
+        -1px 1px 0 var(--c-brand-shadow),
+        /* Bottom-left */
+        1px 1px 0 var(--c-brand-shadow);
 }
 
-.navbar-links{
+.navbar-links {
     display: flex;
     justify-content: center;
     flex-grow: 1;
 }
 
-.nav-link{
+.nav-link {
     color: var(--c-light) !important;
     font-weight: bold;
     margin: 0 15px;
@@ -70,11 +73,11 @@ body {
     font-weight: bold;
 }
 
-.nav-link:hover{
+.nav-link:hover {
     color: var(--c-f-color) !important;
 }
 
-.nav-item{
+.nav-item {
     margin-bottom: 10px;
 }
 
@@ -84,29 +87,35 @@ body {
     border: none;
     font-weight: bold;
     border-radius: 25px;
+    border: 2px solid var(--c-light);
 }
- 
+
 .btn-logout:hover {
     cursor: pointer;
     transition: 0.3s ease;
-    background-color: var(--c-mid); /* Darker background on hover */
+    background-color: var(--c-dark);
+    /* Darker background on hover */
     transform: scale(1.1);
-    color: var(--c-f-color);
+    color: var(--c-brand) !important;
+    border: 2px solid var(--c-brand);
 }
 
 .btn-logout a {
-    text-decoration: none; /* Remove underline */
-    color: inherit; /* Inherit text color from the parent element */
+    text-decoration: none;
+    /* Remove underline */
+    color: inherit;
+    /* Inherit text color from the parent element */
 }
 
 #navbarNav.show {
     border-top: 1px solid white;
 }
 
+/* If there's no colleges available*/
 .message {
     margin-top: 200px;
     text-align: center;
-    transform: translate(0%, 250%);
+    transform: translate(0%, 100%);
 }
 
 .message h2 {
@@ -122,29 +131,161 @@ body {
         1px 2px 0 var(--c-brand-shadow);
 }
 
+.btn-add-college {
+    background-color: var(--c-mid);
+    color: var(--c-light);
+    border: none;
+    font-weight: bold;
+    border-radius: 25px;
+    margin-top: 10px;
+    border: 2px solid var(--c-light);
+}
+
+.btn-add-college:hover {
+    background-color: var(--c-dark);
+    color: var(--c-brand);
+    border: 2px solid var(--c-brand);
+}
+
+.btn-add-college a{
+    text-decoration: none;
+    color: inherit;
+}
+
 .profile-link {
-    display: inline-flex; /* Centers the icon inside the circle */
-    justify-content: center; /* Centers horizontally */
-    align-items: center; /* Centers vertically */
-    width: 40px; /* Set width of the circle */
-    height: 40px;  /* Change #000 to your desired border color */
-    border-radius: 50%; /* Makes the border circular */
-    text-decoration: none; /* Removes underline from the link */
-    background-color: var(--c-mid); /* Optional: Add a background color */
-    color: inherit; /* Inherit the text/icon color */
+    display: inline-flex;
+    /* Centers the icon inside the circle */
+    justify-content: center;
+    /* Centers horizontally */
+    align-items: center;
+    /* Centers vertically */
+    width: 44.5px;
+    /* Set width of the circle */
+    height: 44.5px;
+    /* Change #000 to your desired border color */
+    border-radius: 50%;
+    /* Makes the border circular */
+    text-decoration: none;
+    /* Removes underline from the link */
+    background-color: var(--c-mid);
+    /* Optional: Add a background color */
+    color: inherit;
+    /* Inherit the text/icon color */
     border: 2px solid var(--c-light);
 }
 
 .profile-link:hover {
     cursor: pointer;
     transition: 0.3s ease;
-    background-color: var(--c-mid);
-    /* Darker background on hover */
     transform: scale(1.1);
-    color: var(--c-light); /* Change icon color on hover */
-    border: 2px solid var(--c-f-color);
+    background-color: var(--c-dark);
+    /* Darker background on hover */
+    color: var(--c-brand) !important;
+    /* Change icon color on hover */
+    border: 2px solid var(--c-brand);
 }
 
 .lni {
-    font-size: 22px; /* Adjust the icon size */
+    font-size: 22px;
+    /* Adjust the icon size */
+}
+
+/* If there's Colleges available */
+
+.colleges {
+    margin-top: 50px;
+    /* Keeps the overall container styling */
+    text-align: center;
+    /* Ensures text alignment */
+}
+
+.colleges h2 {
+    color: var(--c-brand);
+    font-weight: bold;
+    text-shadow:
+        -1px -1px 0 var(--c-brand-shadow),
+        /* Top-left */
+        1px -1px 0 var(--c-brand-shadow),
+        /* Top-right */
+        -1px 3px 0 var(--c-brand-shadow),
+        /* Bottom-left */
+        1px 2px 0 var(--c-brand-shadow);
+    /* Bottom-right */
+    text-align: center;
+    /* Ensures the heading is centered */
+    margin: 0 auto;
+    /* Centers the heading horizontally */
+}
+
+.colleges-container {
+    display: flex; /* Enable flexbox */
+    flex-wrap: wrap; /* Allow items to wrap if needed */
+    gap: 10px; /* Add spacing between boxes */
+    justify-content: center; /* Center align items */
+    padding: 20px; /* Add some padding around the container */
+}
+
+.college-name {
+    background-color: var(--c-mid);
+    color: var(--c-brand);
+    text-shadow:
+        1px 1px 0 var(--c-brand-shadow),
+        /* Bottom-right */
+        -1px 1px 0 var(--c-brand-shadow),
+        /* Bottom-left */
+        1px -1px 0 var(--c-brand-shadow),
+        /* Top-right */
+        -1px -1px 0 var(--c-brand-shadow),
+        /* Top-left */
+        1px 0px 0 var(--c-brand-shadow),
+        /* Right */
+        -1px 0px 0 var(--c-brand-shadow),
+        /* Left */
+        0px 1px 0 var(--c-brand-shadow),
+        /* Bottom */
+        0px -1px 0 var(--c-brand-shadow);
+    border: none;
+    font-weight: bold;
+    border-radius: 25px;
+    width: 200px;
+    padding: 5px;
+    margin: 15px 15px;
+    height: 130px;
+    border: 2px solid var(--c-brand);
+    overflow: hidden;
+}
+
+.college-name span{
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.college-btn-group {
+    display: flex;
+    /* Flexbox for horizontal alignment */
+    gap: 10px;
+    /* Space between buttons */
+    justify-content: center;
+    /* Centers the buttons horizontally */
+    margin-top: 45px;
+    /* Adds spacing between the buttons and the college name */
+}
+
+button {
+    padding: 8px 12px;
+    /* Adjust button padding for consistent size */
+    cursor: pointer;
+    /* Adds a pointer cursor for buttons */
+    background-color: var(--c-dark);
+    color: var(--c-light);
+    border: none;
+    font-weight: bold;
+    border-radius: 25px;
+    margin: 0 0px 10px;
+}
+
+button:hover{
+    background-color: var(--c-dark);
+    color: var(--c-brand);    
 }

@@ -44,7 +44,7 @@ $superadmin = $result->fetch_assoc();
     <h3><strong>Current Student ID:</strong> <?php echo htmlspecialchars($superadmin['Student_ID']); ?></h3>
     <h3><strong>Current Username:</strong> <?php echo htmlspecialchars($superadmin['Username']); ?></h3>
 
-    <a href="../dashboards/dashboard.superadmin.php">Back to Dashboard</a><br>
+    <a href="../homepages/homepage.superadmin.php">Back to Homepage</a><br>
     <a href="../features/update.profile.superadmin.php">Update Profile</a><br>
     <a href="../src/logout.php">Logout</a>
 </body>

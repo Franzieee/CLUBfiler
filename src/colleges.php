@@ -24,7 +24,7 @@
                     <input type="submit" class="btn" name="submit" value="Create College" required>
                 </div>
                 <div class="field">
-                <a < href="../homepages/homepage.superadmin.php">Go Back</a> <!-- Redirects to the superadmin homepage -->
+                <a href="../dashboards/dashboard.superadmin.php">Go Back</a> <!-- Redirects to the superadmin homepage -->
                 </div>
             </form>
         </div>
