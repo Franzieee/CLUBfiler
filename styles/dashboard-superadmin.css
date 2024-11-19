@@ -14,6 +14,7 @@
     --c-body: #727272;
     --c-brand: #F7A632;
     --c-brand-shadow: #ffe5c1;
+    --c-delete: #f44336;
     --font-base: "ClashDisplay", sans-serif;
     --transition: all 0.5s ease;
 }
@@ -288,4 +289,58 @@ button {
 button:hover{
     background-color: var(--c-dark);
     color: var(--c-brand);    
+}
+
+/* Confirmation box */
+
+.confirmation-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--c-dark);
+    border: 2px solid var(--c-brand);
+    border-radius: 25px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    text-align: center;
+}
+
+.confirmation-box p {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: var(--c-light);
+}
+
+.confirmation-actions {
+    display: flex;
+    justify-content: space-around;
+    gap: 5px;
+}
+
+.confirmation-actions button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.confirmation-actions .confirm-yes {
+    background: var(--c-delete);
+    color: white;
+}
+
+.confirmation-actions .confirm-no {
+    background: var(--c-mid);
+    color: white;
+}
+
+.confirmation-actions .confirm-yes:hover{
+    transform: scale(1.2);
+}
+
+.confirmation-actions .confirm-no:hover{
+    transform: scale(1.2);
 }

@@ -79,7 +79,7 @@
     // Check if there are colleges
     if ($result->num_rows > 0) {
 
-        
+
         echo "<div class='colleges'>
         <h2>COLLEGES</h2>
         <div class='add-college'>
@@ -87,29 +87,28 @@
         </div>
         <div class='colleges-container'>"; // New parent container
 
-// Loop through each college and display it
-while ($row = $result->fetch_assoc()) {
-    $college_name = htmlspecialchars($row['College_Name']);
+        // Loop through each college and display it
+        while ($row = $result->fetch_assoc()) {
+            $college_name = htmlspecialchars($row['College_Name']);
 
-    echo "
-            <div class='college-name'>
-                <span>$college_name</span>
-                <div class='college-btn-group'>
-                    <form action='' method='POST' style='display:inline;'>
-                        <input type='hidden' name='College_Name' value='$college_name'>
-                        <button type='submit' onclick='return confirm(\"Are you sure you want to delete this college?\");'>DELETE</button>
-                    </form>
-                    <form action='../features/update.college.php' method='POST' style='display:inline;'>
-                        <input type='hidden' name='College_Name' value='$college_name'>
-                        <button type='submit' onclick='return confirm(\"Are you sure you want to update this college?\");'>UPDATE</button>
-                    </form>
+            echo "
+                <div class='college-name'>
+                    <span>$college_name</span>
+                    <div class='college-btn-group'>
+                        <form action='' method='POST' style='display:inline;' onsubmit='return confirmAction(event, \"Are you sure you want to delete this?\");'>
+                            <input type='hidden' name='College_Name' value='$college_name'>
+                            <button type='submit'>DELETE</button>
+                        </form>
+                        <form action='../features/update.college.php' method='POST' style='display:inline;' onsubmit='return confirmAction(event, \"Are you sure you want to update this?\");'>
+                            <input type='hidden' name='College_Name' value='$college_name'>
+                            <button type='submit'>UPDATE</button>
+                        </form>
+                    </div>
                 </div>
-            </div>
-        ";
-}
+            ";
+        }
 
-echo "</div></div>";
-
+        echo "</div></div>";
     } else {
         echo "<div class='message'>
             <h2>No colleges found</h2>
