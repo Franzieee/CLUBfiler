@@ -30,11 +30,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["create-college"])) {
         $stmt->execute();
         $result = $stmt->get_result();
 
-        // Outputs an error if the college already exists
-        if ($result->num_rows > 0) {
-            ErrorHandler::handleError("College already exists.");
-        }
-
         // Executes the query to create the college
         try {
             $message = College::create($conn, $college_name);
@@ -43,8 +38,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["create-college"])) {
             echo '<a href="../dashboards/dashboard.superadmin.php" class="logout-button">Go Back</a>';
             exit;
         } catch (Exception $e) {
-            // Outputs an error if execution fails
-            ErrorHandler::handleError("Registration failed: " . $e->getMessage());
+            if (strpos($e->getMessage(), 'Duplicate entry') !== false) {
+                ErrorHandler::handleError("College already exists.");
+            } else {
+                // Outputs an error if execution fails
+                ErrorHandler::handleError("Registration failed: " . $e->getMessage());
+            }
         }
         $stmt->close();
     }
