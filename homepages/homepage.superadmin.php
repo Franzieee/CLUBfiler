@@ -59,28 +59,47 @@ if (!isset($_SESSION['user_id'])) {
         </div>
     </nav>
 
-    <div class="message">
-        <h2>Welcome back!</h2>
-    </div>
+    <?php
+    include("../connections/create.colleges.php");
+
+
+    // Fetch colleges from the  database to display
+    $stmt = "SELECT * FROM colleges";
+    $result = $conn->query($stmt);
+
+    // Check if there are colleges
+    if ($result->num_rows > 0) {
+
+
+        echo "<div class='colleges'>
+                <h1>Welcome back!</h1>
+                <h2>COLLEGES</h2>
+        <div class='colleges-container'>"; // New parent container
+
+        // Loop through each college and display it
+        while ($row = $result->fetch_assoc()) {
+            $college_name = htmlspecialchars($row['College_Name']);
+
+            echo "
+                <div class='college-name'>
+                    <span>$college_name</span>
+                </div>
+            ";
+        }
+
+        echo "</div></div>";
+    } else {
+        echo "<div class='message'>
+            <h2>No colleges found</h2>
+            <div class='add-college'>
+                <button class='btn btn-add-college'><a href='../src/colleges.php'>Add College</a></button>
+            </div>
+          </div>";
+    }
+    ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="../script/homepare-superadmin-script.js"></script>
 </body>
 
 </html>
-
-<?php
-include("../connections/create.colleges.php");
-
-$stmt = "SELECT * FROM colleges";
-$result = $conn->query($stmt);
-
-if ($result->num_rows > 0) {
-    echo "COLLEGES<br>";
-    while ($row = $result->fetch_assoc()) {
-        $college_name = htmlspecialchars($row['College_Name']);
-        echo $college_name . "<br>";
-    }
-}
-
-?>
