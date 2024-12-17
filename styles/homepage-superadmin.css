@@ -115,7 +115,20 @@ body {
 .message {
     margin-top: 200px;
     text-align: center;
-    transform: translate(0%, 100%);
+    transform: translate(0%, 100%   );
+}
+
+.message h1 {
+    color: var(--c-brand);
+    font-weight: bold;
+    text-shadow:
+        -1px -1px 0 var(--c-brand-shadow),
+        /* Top-left */
+        1px -1px 0 var(--c-brand-shadow),
+        /* Top-right */
+        -1px 3px 0 var(--c-brand-shadow),
+        /* Bottom-left */
+        1px 2px 0 var(--c-brand-shadow);
 }
 
 .message h2 {
@@ -129,27 +142,6 @@ body {
         -1px 3px 0 var(--c-brand-shadow),
         /* Bottom-left */
         1px 2px 0 var(--c-brand-shadow);
-}
-
-.btn-add-college {
-    background-color: var(--c-mid);
-    color: var(--c-light);
-    border: none;
-    font-weight: bold;
-    border-radius: 25px;
-    margin-top: 10px;
-    border: 2px solid var(--c-light);
-}
-
-.btn-add-college:hover {
-    background-color: var(--c-dark);
-    color: var(--c-brand);
-    border: 2px solid var(--c-brand);
-}
-
-.btn-add-college a{
-    text-decoration: none;
-    color: inherit;
 }
 
 .profile-link {

@@ -117,7 +117,7 @@ button:hover{
     background: var(--c-mid);
 }
 
-.back {
+.back-btn {
     background-color: var(--c-mid);
     color: var(--c-light);
     border: none;
@@ -128,7 +128,7 @@ button:hover{
     padding: 5px 10px;
 }
  
-.back:hover {
+.back-btn:hover {
     cursor: pointer;
     transition: 0.3s ease;
     background-color: var(--c-mid); /* Darker background on hover */
@@ -136,7 +136,24 @@ button:hover{
     color: var(--c-light);
 }
 
-.back a {
+.back-btn a {
     text-decoration: none; /* Remove underline */
     color: inherit; /* Inherit text color from the parent element */
+}
+
+li {
+    list-style-type: none;
+}
+
+
+.inner{
+    width: 350px;
+    min-width: 350px;
+    background-color: var(--c-mid);
+    display: flex;
+    flex-direction: column; /* Aligns items vertically */
+    justify-content: center; /* Centers items vertically */
+    align-items: center;
+    height: 100%; /* Ensure it takes the full height of its parent container */
+    text-align: center;
 }

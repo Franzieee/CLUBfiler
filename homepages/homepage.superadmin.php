@@ -21,7 +21,7 @@ if (!isset($_SESSION['user_id'])) {
 <body>
     <nav class="navbar navbar-expand-lg">
         <div class="container">
-            <a class="navbar-brand fs-4" href="#">cFiler</a>
+            <a class="navbar-brand fs-4" href="../homepages/homepage.superadmin.php">cFiler</a>
             <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -90,10 +90,8 @@ if (!isset($_SESSION['user_id'])) {
         echo "</div></div>";
     } else {
         echo "<div class='message'>
+            <h1>Welcome back!</h1>
             <h2>No colleges found</h2>
-            <div class='add-college'>
-                <button class='btn btn-add-college'><a href='../src/colleges.php'>Add College</a></button>
-            </div>
           </div>";
     }
     ?>
