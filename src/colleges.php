@@ -6,36 +6,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/colleges-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="../styles/updates-style.css">
     <title>Add College</title>
 </head>
 
 <body>
-    <?php include("../connections/create.colleges.php"); ?> <!-- Main process file for creating the colleges -->
-    <div class="content">
-        <div class="box-container">
-            <div class="box">
-                <div class="inner">
-                    <header>Add College</header>
-                    <form action="" method="post">
-                        <div class="field input">
-                            <label for="create-college-label">College Name</label>
-                            <input type="text" name="create-college" placeholder="College Name">
-                        </div>
-
-                        <div class="field">
-                            <input type="submit" class="btn" name="submit" value="Create College">
-                        </div>
-
-                        <div class="field">
-                            <li class="back-btnz">
-                                <a href="../dashboards/dashboard.superadmin.php">
-                                    <i class="lni lni-arrow-left"></i>
-                                </a><!-- Redirects to the superadmin homepage -->
-                            </li>
-                        </div>
-
-                    </form>
+    <?php include("../connections/create.colleges.php"); ?>
+    <div class="container">
+        <div class="box form-box">
+            <h2>Add College</h2>
+            <form action="" method="post">
+                <div class="field input">
+                    <input type="text" name="create-college" placeholder="College Name">
                 </div>
-            </div>
+
+                <div class="field">
+                    <button type="submit" class="btn-submit" name="submit">Create College</button>
+                </div>
+
+                <div class="field">
+                    <a href="../dashboards/dashboard.superadmin.php">
+                        <button type="button" class="btn btn-back mb-3">
+                            <i class="fas fa-arrow-left"></i> Back
+                        </button>
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
+
+<script src="../script/error-handling-script.js"></script>
+
+</html>

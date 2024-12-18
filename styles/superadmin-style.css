@@ -1,4 +1,4 @@
-@import url(../fonts/clash-display.css);
+/* CSS for home, FAQ, and about */
 
 :root {
     --c-darkest: #212529;
@@ -14,8 +14,8 @@
     --c-body: #727272;
     --c-brand: #F7A632;
     --c-brand-shadow: #ffe5c1;
-    --font-base: "ClashDisplay", sans-serif;
-    --transition: all 0.5s ease;
+    --c-delete: #f44336;
+    --font-base: Arial, sans-serif;
 }
 
 * {
@@ -25,7 +25,8 @@
     font-family: var(--font-base);
 }
 
-body {
+/* Default design */
+html, body {
     width: 100%;
     height: 100vh;
     background-image: radial-gradient(circle, rgba(var(--c-inner)), rgba(var(--c-outer)));
@@ -35,7 +36,9 @@ body {
     width: 100%;
     text-align: center;
 }
+/* Default design */
 
+/* Navbar design */
 .navbar {
     background-color: var(--c-dark);
     display: flex;
@@ -56,12 +59,6 @@ body {
         1px 1px 0 var(--c-brand-shadow);
 }
 
-.navbar-links{
-    display: flex;
-    justify-content: center;
-    flex-grow: 1;
-}
-
 .nav-link{
     color: var(--c-light) !important;
     font-weight: bold;
@@ -77,8 +74,23 @@ body {
     color: var(--c-f-color) !important;
 }
 
-.nav-item{
-    margin-bottom: 10px;
+.nav-link i {
+    margin-right: 8px;
+}
+
+.dropdown-item{
+    color: var(--c-light) !important;
+    font-weight: bold;
+}
+
+.dropdown-item:hover{
+    color: var(--c-brand) !important;
+    background-color: var(--c-dark);
+}
+
+.dropdown-menu{
+    border: 2px solid var(--c-light);
+    background-color: var(--c-mid);
 }
 
 .btn-logout {
@@ -100,139 +112,41 @@ body {
     border: 2px solid var(--c-brand);
 }
 
-.btn-logout a {
+.nav-item a {
     text-decoration: none;
-    /* Remove underline */
     color: inherit;
-    /* Inherit text color from the parent element */
 }
 
 #navbarNav.show {
     border-top: 1px solid white;
 }
+/* Navbar design */
 
-/* If there's no colleges available*/
-.message {
-    margin-top: 200px;
+/* If there's no colleges available */
+/* Body message */
+
+p{
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--c-darkest); 
     text-align: center;
-    transform: translate(0%, 100%   );
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
-
-.message h1 {
-    color: var(--c-brand);
-    font-weight: bold;
-    text-shadow:
-        -1px -1px 0 var(--c-brand-shadow),
-        /* Top-left */
-        1px -1px 0 var(--c-brand-shadow),
-        /* Top-right */
-        -1px 3px 0 var(--c-brand-shadow),
-        /* Bottom-left */
-        1px 2px 0 var(--c-brand-shadow);
-}
-
-.message h2 {
-    color: var(--c-brand);
-    font-weight: bold;
-    text-shadow:
-        -1px -1px 0 var(--c-brand-shadow),
-        /* Top-left */
-        1px -1px 0 var(--c-brand-shadow),
-        /* Top-right */
-        -1px 3px 0 var(--c-brand-shadow),
-        /* Bottom-left */
-        1px 2px 0 var(--c-brand-shadow);
-}
-
-.profile-link {
-    display: inline-flex;
-    /* Centers the icon inside the circle */
-    justify-content: center;
-    /* Centers horizontally */
-    align-items: center;
-    /* Centers vertically */
-    width: 44.5px;
-    /* Set width of the circle */
-    height: 44.5px;
-    /* Change #000 to your desired border color */
-    border-radius: 50%;
-    /* Makes the border circular */
-    text-decoration: none;
-    /* Removes underline from the link */
-    background-color: var(--c-mid);
-    /* Optional: Add a background color */
-    color: inherit;
-    /* Inherit the text/icon color */
-    border: 2px solid var(--c-light);
-}
-
-.profile-link:hover {
-    cursor: pointer;
-    transition: 0.3s ease;
-    transform: scale(1.1);
-    background-color: var(--c-dark);
-    /* Darker background on hover */
-    color: var(--c-brand) !important;
-    /* Change icon color on hover */
-    border: 2px solid var(--c-brand);
-}
-
-.lni {
-    font-size: 22px;
-    /* Adjust the icon size */
-}
-
-/* If there's Colleges available */
 
 .colleges {
-    margin-top: 50px;
-    /* Keeps the overall container styling */
+    margin-top: 0px;
+    justify-content: center;
     text-align: center;
-    /* Ensures text alignment */
-}
-
-.colleges h1 {
-    color: var(--c-brand);
-    font-weight: bold;
-    text-shadow:
-        -1px -1px 0 var(--c-brand-shadow),
-        /* Top-left */
-        1px -1px 0 var(--c-brand-shadow),
-        /* Top-right */
-        -1px 3px 0 var(--c-brand-shadow),
-        /* Bottom-left */
-        1px 2px 0 var(--c-brand-shadow);
-    /* Bottom-right */
-    text-align: center;
-    /* Ensures the heading is centered */
-    margin: 0 auto;
-    /* Centers the heading horizontally */
-}
-
-.colleges h2 {
-    color: var(--c-brand);
-    font-weight: bold;
-    text-shadow:
-        -1px -1px 0 var(--c-brand-shadow),
-        /* Top-left */
-        1px -1px 0 var(--c-brand-shadow),
-        /* Top-right */
-        -1px 3px 0 var(--c-brand-shadow),
-        /* Bottom-left */
-        1px 2px 0 var(--c-brand-shadow);
-    /* Bottom-right */
-    text-align: center;
-    /* Ensures the heading is centered */
-    margin: 0 auto;
-    /* Centers the heading horizontally */
+    transform: translate(0%, 50%);
 }
 
 .colleges-container {
-    display: flex; /* Enable flexbox */
-    flex-wrap: wrap; /* Allow items to wrap if needed */
-    gap: 10px; /* Add spacing between boxes */
-    justify-content: center; /* Center align items */
-    padding: 20px; /* Add some padding around the container */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    padding: 20px;
 }
 
 .college-name {
@@ -243,7 +157,7 @@ body {
         /* Bottom-right */
         -1px 1px 0 var(--c-brand-shadow),
         /* Bottom-left */
-        1px -1px 0 var  (--c-brand-shadow),
+        1px -1px 0 var(--c-brand-shadow),
         /* Top-right */
         -1px -1px 0 var(--c-brand-shadow),
         /* Top-left */
@@ -270,3 +184,137 @@ body {
     display: flex;
     justify-content: center;
 }
+
+.message {
+    margin-top: 0px;
+    justify-content: center;
+    text-align: center;
+    transform: translate(0%, 100%);
+}
+
+.message h1, .colleges h1 {
+    color: var(--c-brand);
+    font-weight: bold;
+    text-shadow:
+        -1px -1px 0 var(--c-brand-shadow),
+        /* Top-left */
+        1px -1px 0 var(--c-brand-shadow),
+        /* Top-right */
+        -1px 3px 0 var(--c-brand-shadow),
+        /* Bottom-left */
+        1px 2px 0 var(--c-brand-shadow);
+}
+
+.message h3, .colleges h3 {
+    color: var(--c-brand);
+    font-weight: bold;
+    text-shadow:
+        -1px -1px 0 var(--c-brand-shadow),
+        /* Top-left */
+        1px -1px 0 var(--c-brand-shadow),
+        /* Top-right */
+        -1px 3px 0 var(--c-brand-shadow),
+        /* Bottom-left */
+        1px 2px 0 var(--c-brand-shadow);
+}
+
+.btn-manage {
+    background-color: var(--c-mid);
+    color: var(--c-light);
+    border: none;
+    font-weight: bold;
+    border-radius: 25px;
+    border: 2px solid var(--c-light);
+}
+
+.btn-manage:hover {
+    cursor: pointer;
+    transition: 0.3s ease;
+    background-color: var(--c-dark);
+    /* Darker background on hover */
+    transform: scale(1.1);
+    color: var(--c-brand) !important;
+    border: 2px solid var(--c-brand);
+}
+
+/* Body message */
+
+/* FAQ and about design */
+.faq-container {
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.title-faq-section h1 {
+    margin: 20px;
+    color: var(--c-brand);
+    font-weight: bold;
+    text-shadow:
+        -1px -1px 0 var(--c-brand-shadow),
+        1px -1px 0 var(--c-brand-shadow),
+        -1px 3px 0 var(--c-brand-shadow),
+        1px 2px 0 var(--c-brand-shadow);
+    text-align: center;
+}
+
+.faq-section {
+    margin: 0 auto;
+}
+
+.faq {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.faq-question {
+    color: var(--c-brand);
+    font-weight: bold;
+    text-shadow:
+        -1px -1px 0 var(--c-brand-shadow),
+        1px -1px 0 var(--c-brand-shadow),
+        -1px 3px 0 var(--c-brand-shadow),
+        1px 2px 0 var(--c-brand-shadow);
+}
+
+.about-container {
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.title-about-section h2{
+    margin: 20px;
+    color: var(--c-brand);
+    font-weight: bold;
+    text-shadow:
+        -1px -1px 0 var(--c-brand-shadow),
+        1px -1px 0 var(--c-brand-shadow),
+        -1px 3px 0 var(--c-brand-shadow),
+        1px 2px 0 var(--c-brand-shadow);
+    text-align: center;
+}
+
+.about-section {
+    padding-top: 0px;
+}
+
+.about-section p{
+    padding-top: 0px;
+    padding-bottom: 30px;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 50%;
+}
+/* FAQ design */
