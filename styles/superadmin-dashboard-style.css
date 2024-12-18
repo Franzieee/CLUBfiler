@@ -1,0 +1,432 @@
+/* CSS for dashboard and profile */
+
+:root {
+    --c-darkest: #212529;
+    --c-dark: #173c31;
+    --c-mid: #589e95;
+    --c-light: #b6eff1;
+    --c-f-color: #fff;
+    --c-link-dark: #341156;
+    --c-link-mid: #791cd5;
+    --c-link-light: #a966ed;
+    --c-inner: 182, 239, 241;
+    --c-outer: 23, 60, 49;
+    --c-body: #727272;
+    --c-brand: #F7A632;
+    --c-brand-shadow: #ffe5c1;
+    --c-delete: #f44336;
+    --font-base: Arial, sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--font-base);
+}
+
+/* Default design */
+html, body {
+    width: 100%;
+    height: 100vh;
+    background-image: radial-gradient(circle, rgba(var(--c-inner)), rgba(var(--c-outer)));
+}
+
+.content {
+    width: 100%;
+    text-align: center;
+}
+/* Default design */
+
+/* Main design */
+.bg-main { 
+    padding: 30px;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.bg-main h2 {
+    margin-top: 10px;
+    color: var(--c-brand);
+    font-weight: bold;
+    text-shadow:
+        -1px -1px 0 var(--c-brand-shadow),
+        /* Top-left */
+        1px -1px 0 var(--c-brand-shadow),
+        /* Top-right */
+        -1px 3px 0 var(--c-brand-shadow),
+        /* Bottom-left */
+        1px 2px 0 var(--c-brand-shadow);
+}
+
+.profile-header i {
+    color: var(--c-dark);
+    font-weight: bold;
+    text-shadow:
+    -2px -2px 0 var(--c-brand),
+    2px -2px 0 var(--c-brand),
+    -2px 2px 0 var(--c-brand),
+    2px 2px 0 var(--c-brand),
+    0 -2px 0 var(--c-brand),
+    -2px 0 0 var(--c-brand),
+    2px 0 0 var(--c-brand),
+    0 2px 0 var(--c-brand);
+}
+
+.profile-details{
+    text-align: center;
+}
+
+.profile-details h3{
+    color: var(--c-darkest);
+}
+
+.btn-update-profile {
+    padding: 8px 12px;
+    cursor: pointer;
+    background-color: var(--c-mid);
+    color: var(--c-light);
+    border: 2px solid var(--c-light);
+    font-weight: bold;
+    border-radius: 25px;
+    margin: 10px
+}
+
+.btn-update-profile:hover{
+    background-color: var(--c-dark);
+    color: var(--c-brand);   
+    border: 2px solid var(--c-brand); 
+}
+
+.btn-update-profile:focus {
+    outline: 2px solid var(--c-brand);
+}
+.nav-link:focus {
+    outline: 2px solid var(--c-link-mid);
+}
+
+/* Main design */
+
+/* Sidebar design */
+.bg-sidebar {
+    background-color: var(--c-dark); 
+    padding: 20px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    margin-bottom: 40px;
+    font-weight: bold;
+    color: var(--c-brand) !important;
+    text-shadow:
+        -1px -1px 0 var(--c-brand-shadow),
+        /* Top-left */
+        1px -1px 0 var(--c-brand-shadow),
+        /* Top-right */
+        -1px 1px 0 var(--c-brand-shadow),
+        /* Bottom-left */
+        1px 1px 0 var(--c-brand-shadow);
+}
+
+.dashboard-indicator {
+    color: var(--c-light); 
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin: 10px 0;
+    padding-left: 8px;
+}
+
+.nav-link {
+    border-radius: 25px;
+    color: var(--c-light); 
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 2px solid var(--c-dark);
+    padding: 10px; 
+}
+
+.nav-link i {
+    margin-right: 8px;
+}
+
+.nav-link.active {
+    background-color: var(--c-mid); 
+    color: var(--c-light) !important;
+    border: 2px solid var(--c-dark); 
+}
+
+.nav-link:hover {
+    background-color: var(--c-dark); 
+    color: var(--c-brand) !important;
+    border: 2px solid var(--c-brand)
+}
+
+.btn-back, .btn-logout {
+    background-color: var(--c-mid); 
+    color: var(--c-light);
+    font-size: 16px;
+    width: 100%;
+    padding: 10px;
+    border: 2px solid var(--c-light);
+    cursor: pointer;
+    margin-bottom: 10px;
+    border-radius: 25px;
+}
+
+.btn-back:hover, .btn-logout:hover {
+    background-color: var(--c-dark); 
+    color: var(--c-brand) !important;
+    border: 2px solid var(--c-brand);
+}
+
+.admin-text {
+    font-size: 14px;
+    color: var(--c-light); 
+    text-align: center;
+    margin-top: 10px;
+}
+/* Sidebar design */
+
+@media (max-width: 768px) {
+    .bg-sidebar {
+        height: auto;
+    }
+}
+
+/* Colleges display */
+.colleges {
+    margin-top: 50px;
+    /* Keeps the overall container styling */
+    text-align: center;
+    /* Ensures text alignment */
+}
+
+.colleges h2 {
+    color: var(--c-brand);
+    font-weight: bold;
+    text-shadow:
+        -1px -1px 0 var(--c-brand-shadow),
+        /* Top-left */
+        1px -1px 0 var(--c-brand-shadow),
+        /* Top-right */
+        -1px 3px 0 var(--c-brand-shadow),
+        /* Bottom-left */
+        1px 2px 0 var(--c-brand-shadow);
+    /* Bottom-right */
+    text-align: center;
+    /* Ensures the heading is centered */
+    margin: 0 auto;
+    /* Centers the heading horizontally */
+}
+
+.colleges-container {
+    display: flex; /* Enable flexbox */
+    flex-wrap: wrap; /* Allow items to wrap if needed */
+    gap: 10px; /* Add spacing between boxes */
+    justify-content: center; /* Center align items */
+    padding: 20px; /* Add some padding around the container */
+}
+
+.college-name {
+    background-color: var(--c-mid);
+    color: var(--c-brand);
+    text-shadow:
+        1px 1px 0 var(--c-brand-shadow),
+        /* Bottom-right */
+        -1px 1px 0 var(--c-brand-shadow),
+        /* Bottom-left */
+        1px -1px 0 var(--c-brand-shadow),
+        /* Top-right */
+        -1px -1px 0 var(--c-brand-shadow),
+        /* Top-left */
+        1px 0px 0 var(--c-brand-shadow),
+        /* Right */
+        -1px 0px 0 var(--c-brand-shadow),
+        /* Left */
+        0px 1px 0 var(--c-brand-shadow),
+        /* Bottom */
+        0px -1px 0 var(--c-brand-shadow);
+    border: none;
+    font-weight: bold;
+    border-radius: 25px;
+    width: 200px;
+    padding: 5px;
+    margin: 15px 15px;
+    height: 130px;
+    border: 2px solid var(--c-brand);
+    overflow: hidden;
+}
+
+.college-name span{
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.college-btn-group {
+    display: flex;
+    gap: 10px;
+    justify-content: center; /* Center buttons horizontally */
+    margin-top: 45px;
+    align-items: center; /* Align items vertically within the group */
+}
+
+.college-btn-group button {
+    padding: 10px;
+    font-size: 15px;
+    text-align: center; /* Ensure text inside button is centered */
+    max-width: 75px;
+    display: inline-flex; /* Ensure button content is centered as inline-flex */
+    justify-content: center; /* Center button content */
+    align-items: center; /* Vertically center content inside the button */
+}
+
+.college-btn-group form {
+    display: flex; /* Make the form a flex container */
+    justify-content: center; /* Center form content horizontally */
+    align-items: center; /* Center form content vertically */
+    text-align: center; /* Center text inside the form */
+    width: 100%; /* Ensure the form stretches across the parent */
+}
+
+.btn-add-college {
+    background-color: var(--c-mid);
+    color: var(--c-light);
+    border: none;
+    font-weight: bold;
+    border-radius: 25px;
+    margin-top: 10px;
+    border: 2px solid var(--c-light);
+}
+
+.btn-add-college:hover {
+    background-color: var(--c-dark);
+    color: var(--c-brand);
+    border: 2px solid var(--c-brand);
+}
+
+button {
+    padding: 8px 12px;
+    cursor: pointer;
+    background-color: var(--c-dark);
+    color: var(--c-light);
+    border: none;
+    font-weight: bold;
+    border-radius: 25px;
+    margin: 0 0px 10px;
+    max-width: 250px;
+}
+
+button:hover{
+    background-color: var(--c-dark);
+    color: var(--c-brand);    
+}
+
+/* Confirmation box */
+.confirmation-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--c-dark);
+    border: 2px solid var(--c-brand);
+    border-radius: 25px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    text-align: center;
+}
+
+.confirmation-box p {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: var(--c-light);
+}
+
+.confirmation-actions {
+    display: flex;
+    justify-content: space-around;
+    gap: 5px;
+}
+
+.confirmation-actions button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    width: 75px;
+}
+
+.confirmation-actions .confirm-yes {
+    background: var(--c-delete);
+    color: white;
+}
+
+.confirmation-actions .confirm-no {
+    background: var(--c-mid);
+    color: white;
+}
+
+.confirmation-actions .confirm-yes:hover{
+    transform: scale(1.2);
+}
+
+.confirmation-actions .confirm-no:hover{
+    transform: scale(1.2);
+}
+/* Confirmation box */
+
+.message {
+    margin-top: 0px;
+    justify-content: center;
+    text-align: center;
+    transform: translate(0%, 100%);
+}
+
+.message h2 {
+    color: var(--c-brand);
+    font-weight: bold;
+    text-shadow:
+        -1px -1px 0 var(--c-brand-shadow),
+        /* Top-left */
+        1px -1px 0 var(--c-brand-shadow),
+        /* Top-right */
+        -1px 3px 0 var(--c-brand-shadow),
+        /* Bottom-left */
+        1px 2px 0 var(--c-brand-shadow);
+}
+
+/* If there's no colleges available*/
+.message {
+    margin-top: 200px;
+    text-align: center;
+    transform: translate(0%, 100%);
+}
+
+.message h2 {
+    color: var(--c-brand);
+    font-weight: bold;
+    text-shadow:
+        -1px -1px 0 var(--c-brand-shadow),
+        /* Top-left */
+        1px -1px 0 var(--c-brand-shadow),
+        /* Top-right */
+        -1px 3px 0 var(--c-brand-shadow),
+        /* Bottom-left */
+        1px 2px 0 var(--c-brand-shadow);
+}
+/* Colleges display */
+
+.nav-link, .btn-update-profile, .btn-add-college {
+    transition: all 0.3s ease;
+}

@@ -1,4 +1,4 @@
-@import url("../fonts/clash-display.css");
+/* For Login */
 
 :root {
   --c-darkest: #212529;
@@ -14,8 +14,8 @@
   --c-body: #727272;
   --c-brand: #F7A632;
   --c-brand-shadow: #ffe5c1;
-  --font-base: "ClashDisplay", sans-serif;
-  --transition: all 0.5s ease;
+  --c-delete: #f44336;
+  --font-base: Arial, sans-serif;
 }
 
 * {

@@ -1,0 +1,133 @@
+/* CSS for updates (colleges, profile) and for creating colleges.*/
+
+:root {
+    --c-darkest: #212529;
+    --c-dark: #173c31;
+    --c-mid: #589e95;
+    --c-light: #b6eff1;
+    --c-f-color: #fff;
+    --c-link-dark: #341156;
+    --c-link-mid: #791cd5;
+    --c-link-light: #a966ed;
+    --c-inner: 182, 239, 241;
+    --c-outer: 23, 60, 49;
+    --c-body: #727272;
+    --c-brand: #F7A632;
+    --c-brand-shadow: #ffe5c1;
+    --c-delete: #f44336;
+    --font-base: Arial, sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--font-base);
+}
+
+/* Default design */
+html,
+body {
+    width: 100%;
+    height: 100vh;
+    background-image: radial-gradient(circle, rgba(var(--c-inner)), rgba(var(--c-outer)));
+}
+
+.content {
+    width: 100%;
+    text-align: center;
+}
+
+/* Default design */
+
+li.back-btn::marker {
+    content: none;
+}
+
+/* Box design */
+.container {
+    height: 300px;
+    width: 70%;
+    max-width: 500px;
+    min-width: 280px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    overflow: hidden;
+    border-radius: 25px;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 8px 2px var(--c-darkest);
+}
+
+.form-box {
+    height: 100%;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding-inline: 25px;
+    border-radius: 25px;
+    background-color: var(--c-dark);
+    border: 2px solid var(--c-light);
+}
+
+/* Box design */
+
+h2 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--c-light);
+}
+
+form {
+    max-width: 300px;
+    font-size: 20px;
+    text-align: center;
+}
+
+input,
+button {
+    width: 100%;
+}
+
+form label {
+    color: var(--c-light);
+}
+
+input {
+    height: 50px;
+    border-radius: 25px;
+    border: 2px solid var(--c-light);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    font-size: 14px;
+    width: 300px;
+}
+
+.btn-back,
+.btn-submit {
+    background-color: var(--c-mid);
+    color: var(--c-light);
+    font-size: 16px;
+    width: 100%;
+    padding: 10px;
+    border: 2px solid var(--c-light);
+    cursor: pointer;
+    margin-bottom: 20px;
+    border-radius: 25px;
+}
+
+.btn-back:hover,
+.btn-submit:hover {
+    background-color: var(--c-dark);
+    color: var(--c-brand) !important;
+    border: 2px solid var(--c-brand);
+    transition: 0.3s ease;
+    box-shadow: 0 0 8px 2px var(--c-brand-shadow);
+}

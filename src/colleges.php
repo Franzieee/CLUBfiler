@@ -6,29 +6,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="../styles/updates-style.css">
     <title>Add College</title>
 </head>
 
 <body>
-    <?php include("../connections/create.colleges.php"); ?> <!-- Main process file for creating the colleges -->
+    <?php include("../connections/create.colleges.php"); ?>
     <div class="container">
         <div class="box form-box">
-            <header>Add College</header>
+            <h2>Add College</h2>
             <form action="" method="post">
                 <div class="field input">
-                    <label for="create-college">College Name</label>
-                    <input type="text" name="create-college" placeholder="College Name" required>
+                    <input type="text" name="create-college" placeholder="College Name">
                 </div>
 
                 <div class="field">
-                    <input type="submit" class="btn" name="submit" value="Create College" required>
+                    <button type="submit" class="btn-submit" name="submit">Create College</button>
                 </div>
+
                 <div class="field">
-                <a < href="../homepages/homepage.superadmin.php">Go Back</a> <!-- Redirects to the superadmin homepage -->
+                    <a href="../dashboards/dashboard.superadmin.php">
+                        <button type="button" class="btn btn-back mb-3">
+                            <i class="fas fa-arrow-left"></i> Back
+                        </button>
+                    </a>
                 </div>
             </form>
         </div>
     </div>
 </body>
+
+<script src="../script/error-handling-script.js"></script>
 
 </html>

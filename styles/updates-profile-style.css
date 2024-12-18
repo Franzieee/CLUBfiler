@@ -1,4 +1,4 @@
-@import url(../fonts/clash-display.css);
+/* CSS for updates (profile).*/
 
 :root {
     --c-darkest: #212529;
@@ -13,9 +13,9 @@
     --c-outer: 23, 60, 49;
     --c-body: #727272;
     --c-brand: #F7A632;
-    --c-brand-shadow:  #ffe5c1; 
-    --font-base: "ClashDisplay", sans-serif;
-    --transition: all 0.5s ease;
+    --c-brand-shadow: #ffe5c1;
+    --c-delete: #f44336;
+    --font-base: Arial, sans-serif;
 }
 
 * {
@@ -25,6 +25,8 @@
     font-family: var(--font-base);
 }
 
+/* Default design */
+html,
 body {
     width: 100%;
     height: 100vh;
@@ -36,8 +38,15 @@ body {
     text-align: center;
 }
 
-.container{
-    height: 300px;
+/* Default design */
+
+li.back-btn::marker {
+    content: none;
+}
+
+/* Box design */
+.container {
+    height: 600px;
     width: 70%;
     max-width: 500px;
     min-width: 280px;
@@ -51,7 +60,7 @@ body {
     box-shadow: 0 0 8px 2px var(--c-darkest);
 }
 
-.form-box{
+.form-box {
     height: 100%;
     display: flex;
     flex: 1;
@@ -65,78 +74,60 @@ body {
     border: 2px solid var(--c-light);
 }
 
-header{
-    font-size: 30px;
+/* Box design */
+
+h2 {
+    text-align: center;
+    font-size: 24px;
     font-weight: bold;
-    transform: translate(0%,-100%);
+    margin-bottom: 10px;
+    color: var(--c-light);
 }
 
-form{
+form {
     max-width: 300px;
     font-size: 20px;
     text-align: center;
 }
 
-label,
 input,
-button{
+button {
     width: 100%;
 }
 
-label{
-    text-align: left;
-    font-size: 18px;
+form label {
     color: var(--c-light);
 }
 
-input{
-    height: 35px;
+input {
+    height: 50px;
     border-radius: 25px;
     border: 2px solid var(--c-light);
-    margin-top: 5px;
-    margin-bottom: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     padding-left: 10px;
     font-size: 14px;
+    width: 300px;
 }
 
-button{
-    height: 35px;
-    border-radius: 25px;
+.btn-back,
+.btn-submit {
     background-color: var(--c-mid);
+    color: var(--c-light);
+    font-size: 16px;
+    width: 100%;
+    padding: 10px;
     border: 2px solid var(--c-light);
-    font-size: 13px;
-    color: var(--c-dark) !important;
     cursor: pointer;
-    transition: all 0.5s;
-    margin-bottom: 25px;
-    color: var(--c-light);
-}
-
-button:hover{
-    box-shadow: 0 0 8px 2px var(--c-light);
-    background: var(--c-mid);
-}
-
-.back {
-    background-color: var(--c-mid);
-    color: var(--c-light);
-    border: none;
-    font-weight: bold;
+    margin-bottom: 20px;
     border-radius: 25px;
-    margin-top: 10px;
-    height: 35px;
-    padding: 5px 10px;
-}
- 
-.back:hover {
-    cursor: pointer;
-    transition: 0.3s ease;
-    background-color: var(--c-mid); /* Darker background on hover */
-    transform: scale(1.1);
-    color: var(--c-light);
 }
 
-.back a {
-    text-decoration: none; /* Remove underline */
-    color: inherit; /* Inherit text color from the parent element */
+.btn-back:hover,
+.btn-submit:hover {
+    background-color: var(--c-dark);
+    color: var(--c-brand) !important;
+    border: 2px solid var(--c-brand);
+    transition: 0.3s ease;
+    box-shadow: 0 0 8px 2px var(--c-brand-shadow);
 }

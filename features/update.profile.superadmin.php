@@ -83,25 +83,41 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="../styles/updates-profile-style.css">
     <title>Update Profile</title>
 </head>
 
 <body>
-    <h1>Update Profile</h1>
+    <div class="container">
+        <div class="box form-box">
+            <h2>Update Profile</h2>
+            <form action="" method="POST">
+                <label for="Student_ID">Student ID:</label>
+                <input type="text" name="Student_ID" value="<?php echo htmlspecialchars($superadmin['Student_ID']); ?>" maxlength="8">
 
-    <form action="" method="POST">
-        <label for="Student_ID">Student ID:</label>
-        <input type="text" name="Student_ID" value="<?php echo htmlspecialchars($superadmin['Student_ID']); ?>" maxlength="8">
+                <label for="Username">Username:</label>
+                <input type="text" name="Username" value="<?php echo htmlspecialchars($superadmin['Username']); ?>">
 
-        <label for="Username">Username:</label>
-        <input type="text" name="Username" value="<?php echo htmlspecialchars($superadmin['Username']); ?>">
+                <label for="Password">New Password:</label>
+                <input type="password" name="Password">
 
-        <label for="Password">New Password:</label>
-        <input type="password" name="Password">
+                <div class="field">
+                    <button type="submit" class="btn-submit" name="submit">Update Profile</button>
+                </div>
 
-        <button type="submit">Update Profile</button>
-    </form>
-    <a href="../features/view.profile.superadmin.php">Cancel</a>
+                <div class="field">
+                    <a href="../dashboards/dashboard.superadmin.php">
+                        <button type="button" class="btn btn-back mb-3">
+                            <i class="fas fa-arrow-left"></i> Back
+                        </button>
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
+
+<script src="../script/error-handling-script.js"></script>
 
 </html>

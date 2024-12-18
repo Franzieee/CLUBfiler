@@ -60,21 +60,39 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['new_college_name'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="../styles/updates-style.css">
     <title>Update College</title>
 </head>
 
 <body>
-    <h2>Update College</h2>
-    <form action="" method="POST">
-        <label for="new_college_name">Current College Name:</label>
-        <!-- Has the updated college name -->
-        <input type="text" name="new_college_name" value="<?php echo htmlspecialchars($college['College_Name']); ?>"
-            required>
-        <!-- Has the older college name -->
-        <input type="hidden" name="College_Name" value="<?php echo htmlspecialchars($old_college_name); ?>">
-        <button type="submit">Update College</button>
-    </form>
-    <a href="../dashboards/dashboard.superadmin.php">Cancel</a>
+    <div class="container">
+        <div class="box form-box">
+            <h2>Update College</h2>
+            <form action="" method="POST">
+                <label for="new_college_name">Current College Name:</label>
+                <input type="text" name="new_college_name" value="<?php echo htmlspecialchars($college['College_Name']); ?>"
+                    required>
+
+                <input type="hidden" name="College_Name" value="<?php echo htmlspecialchars($old_college_name); ?>">
+
+                <div class="field">
+                    <button type="submit" class="btn-submit" name="submit">Submit</button>
+                </div>
+
+                <div class="field">
+                    <!-- Remove the button inside the form -->
+                    <a href="../dashboards/dashboard.superadmin.php">
+                        <button type="button" class="btn btn-back mb-3">
+                            <i class="fas fa-arrow-left"></i> Back
+                        </button>
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
+
+<script src="../script/error-handling-script.js"></script>
 
 </html>
